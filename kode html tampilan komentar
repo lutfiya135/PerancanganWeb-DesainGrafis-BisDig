@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Interaktif - Tampilkan Komentar</title>
+  <style>
+    /* CSS Variables for easy theming */
+    :root {
+      --primary-color: #000000; /* item color - warm orange */
+      --primary-hover: #000000;
+      --background-color: #f0f4f8;
+      --card-bg: #fff;
+      --text-color: #333;
+      --border-radius: 12px;
+      --box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      --font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --transition-speed: 0.4s;
+
+      --button-bg: #1e70bf; /* button blue */
+      --button-hover: #155a93;
+      --button-shadow: rgba(30, 112, 191, 0.45);
+
+      --comment-blue: #1e70bf; /* new comment blue */
+      --comment-shadow: rgba(30, 112, 191, 0.3);
+    }
+
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--background-color);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 1rem;
+      color: var(--text-color);
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 2rem 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.25rem;
+      color: var(--primary-color);
+      margin: 0 0 0.25rem 0;
+      user-select: none;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: #555f7a;
+      text-align: center;
+      line-height: 1.5;
+      margin: 0 0 0.5rem 0;
+      user-select: text;
+    }
+
+    /* Toggle Button - smaller and blue */
+    button.toggle-comments {
+      background: var(--button-bg);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px var(--button-shadow);
+      align-self: center;
+      transition: background-color var(--transition-speed), box-shadow var(--transition-speed), transform 0.1s ease-in-out;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      user-select: none;
+      margin: 0;
+    }
+
+    button.toggle-comments:hover {
+      background: var(--button-hover);
+      box-shadow: 0 8px 25px rgba(21, 90, 147, 0.7);
+      transform: scale(1.05);
+    }
+
+    button.toggle-comments:focus {
+      outline: 3px solid #a1c7fa;
+      outline-offset: 3px;
+    }
+
+    button.toggle-comments svg {
+      width: 14px;
+      height: 14px;
+      fill: white;
+      transition: transform var(--transition-speed);
+    }
+
+    button.toggle-comments[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .comments {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.6s ease, opacity 0.4s ease;
+      border-top: 2px solid #e2e8f0;
+    }
+
+    .comments.show {
+      max-height: 1000px;
+      opacity: 1;
+      padding-top: 1.5rem;
+    }
+
+    .comment {
+      background: #f9fbfd;
+      padding: 0.35rem 0.7rem;
+      border-radius: 10px;
+      margin-bottom: 0.3rem;
+      box-shadow: 0 2px 8px var(--comment-shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      border-left: 4px solid var(--comment-blue);
+      user-select: text;
+    }
+
+    .comment .avatar {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--comment-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      user-select: none;
+      box-shadow: 0 3px 8px var(--comment-shadow);
+    }
+
+    .comment .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .comment .author {
+      font-weight: 700;
+      color: var(--comment-blue);
+      font-size: 0.75rem;
+      margin: 0;
+      user-select: text;
+    }
+
+    .comment .timestamp {
+      font-size: 0.6rem;
+      color: #8891a5;
+      font-style: italic;
+      user-select: text;
+    }
+
+    .comment p.message {
+      margin: 0.1rem 0 0;
+      font-size: 0.75rem;
+      line-height: 1.2;
+      user-select: text;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1.5rem 2rem;
+      }
+
+      button.toggle-comments {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .comment {
+        gap: 0.5rem;
+      }
+
+      .comment .avatar {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="Blog dengan komentar dinamis">
+    <h1>BisnisinDigital</h1>
+    <p class="description">
+      Selamat datang di blog kami BisnisinDigital!
+      Disini anda dapat menjelajahi berbagai artikel mengenai Bisnis Digital dan menampilkan komentar anda.
+    </p>
+    <button class="toggle-comments" aria-expanded="false" aria-controls="comments">
+      <span>Tampilkan Komentar</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7 10l5 5 5-5H7z"/>
+      </svg>
+    </button>
+
+    <section class="comments" id="comments" aria-hidden="true">
+      <article class="comment" tabindex="0">
+        <div class="avatar" aria-hidden="true">L</div>
+        <div class="content">
+          <p class="author"> Lutfiya </p>
+          <p class="timestamp"> 23 Mei 2025 </p>
+          <p class="message"> Artikelnya sangat menarik dan informatif!</p>
+        </div>
+      </article>
+      <article class="comment" tabindex="0">
+        <div class="avatar" aria-hidden="true">Z</div>
+        <div class="content">
+          <p class="author"> Zafira </p>
+          <p class="timestamp">23 Mei 2025</p>
+          <p class="message"> Artikelnya sangat membantu! </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const toggleButton = document.querySelector('.toggle-comments');
+    const comments = document.getElementById('comments');
+    const spanText = toggleButton.querySelector('span');
+
+    toggleButton.addEventListener('click', () => {
+      const isHidden = comments.classList.contains('show') === false;
+
+      if (isHidden) {
+        comments.classList.add('show');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        comments.setAttribute('aria-hidden', 'false');
+        spanText.textContent = 'Sembunyikan Komentar';
+      } else {
+        comments.classList.remove('show');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        comments.setAttribute('aria-hidden', 'true');
+        spanText.textContent = 'Tampilkan Komentar';
+      }
+    });
+  </script>
+</body>
+</html>
