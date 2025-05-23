@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Fotografer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Lutfiya Zafira</h1> 
+  </header>
+    <section aria-label="Foto profil fotografer">
+      <img src="foto profil fotografer.jpg" alt="Foto Fotografer Profesional" style="
+    width: 200px;
+    height: 200px;
+    </section>
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <p> Saya adalah seorang mahasiswa Bisnis Digital yang memiliki minat dan berpengalaman selama 2 tahun di bidang fotografi. Saya fokus pada foto produk, event, dan konten untuk sebuah usaha digital. Saya sangat berdedikasi dan profesional dalam menjalankan pekerjaan saya. </p>
+    </section>
+
+    <section>
+      <h2>Portofolio</h2>
+      <p> Berikut adalah beberapa karya terbaik saya : </p>
+    </section>
+      <img src="foto produk 1.jpg" alt="Foto produk" style="
+    width: 200px;
+    height: 200px;
+">
+      <img src="foto produk 2.jpg" alt="Foto produk" style="
+    width: 200px;
+    height: 200px;
+">
+<img src="foto produk 3.jpg" alt="Foto produk" style="
+    width: 200px;
+    height: 200px;
+">
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h2>Kontak</h2>
+    <p>Untuk informasi lebih lanjut atau pemesanan, silakan hubungi : </p>
+    <ul>
+      <li><a href="https://www.instagram.com/lutfiyaaazf?igsh=NnN6cjJkcm12NzJo">Instagram</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
