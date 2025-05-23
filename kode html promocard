@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromoCard</title>
+  <style>
+    /* Reset dan styling dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Wrapper untuk menempatkan card di tengah */
+    .card-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Styling untuk PromoCard */
+    .promo-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .promo-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Gambar pada card */
+    .promo-card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #ddd;
+    }
+
+    /* Konten teks pada card */
+    .promo-card .content {
+      padding: 20px;
+    }
+    .promo-card h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .promo-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* Tombol Daftar Sekarang */
+    .promo-card .btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .promo-card .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsif untuk layar kecil */
+    @media (max-width: 480px) {
+      .promo-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-wrapper">
+    <div class="promo-card">
+      <img src="foto skincare.webp" alt="Promo Spesial Bulan Ini!">
+      <div class="content">
+        <h3>Promo Spesial Bulan Ini</h3>
+        <p>Dapatkan diskon hingga 70% Makeup dan Skincare sampai 30 Juni 2025!</p>
+        <a href="#" class="btn">Daftar Sekarang</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
