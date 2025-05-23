@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wireframe Homepage - Layanan Konsultasi Kesehatan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      margin: 2rem;
+      color: #333;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      color: #2a9d8f;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .box {
+      border: 2px dashed #8ecae6;
+      background: #d0e7ff40;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #555;
+      user-select: none;
+      position: relative;
+      min-height: 50px;
+    }
+    .header { height: 60px;}
+    .nav { height: 40px;}
+    .hero { height: 180px;}
+    .features {
+      display: flex;
+      gap: 1rem;
+      height: 120px;
+      margin-bottom: 1rem;
+    }
+    .feature-item {
+      flex: 1;
+      border: 2px dashed #ffb703;
+      background: #fff3cd80;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #735b00;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+    .cta { height: 70px; margin-bottom: 1rem;}
+    .footer { height: 50px; background: #e0e0e0; border-radius: 6px; }
+
+    .annotation {
+      position: absolute;
+      background: #ef476fcc;
+      color: white;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      max-width: 180px;
+      user-select: none;
+    }
+    #ann-header { top: 10px; left: 20px;}
+    #ann-nav { top: 75px; left: 20px;}
+    #ann-hero { top: 130px; left: 20px;}
+    #ann-features { top: 330px; left: 20px;}
+    #ann-cta { top: 460px; left: 20px;}
+    #ann-footer { top: 540px; left: 20px;}
+  </style>
+</head>
+<body>
+  <h1>Wireframe Homepage - Layanan Konsultasi Kesehatan</h1>
+  <div class="container" style="position: relative;">
+    <div class="box header">Header - Logo & Nama Startup</div>
+    <div class="box nav">Navigasi - Menu Utama</div>
+    <div class="box hero">Hero Section - Visual, Headline & CTA Utama</div>
+    <div class="features">
+      <div class="feature-item">Fitur Konsultasi Online</div>
+      <div class="feature-item">Jadwal Dokter</div>
+      <div class="feature-item">Rekam Medis Digital</div>
+    </div>
+    <div class="box cta">Call to Action - Daftar & Mulai Konsultasi</div>
+    <div class="box footer">Footer - Kontak dan Informasi Legal</div>
+
+    <div id="ann-header" class="annotation">
+      <strong>Header:</strong> Area branding yang jelas dan konsisten membuat pengguna mudah mengenali aplikasi.
+    </div>
+    <div id="ann-nav" class="annotation">
+      <strong>Navigasi:</strong> Menu mempermudah pengguna berpindah halaman dengan hierarki terstruktur.
+    </div>
+    <div id="ann-hero" class="annotation">
+      <strong>Hero Section:</strong> Bagian utama menarik perhatian dengan pesan jelas dan tombol tindakan yang menonjol.
+    </div>
+    <div id="ann-features" class="annotation">
+      <strong>Fitur Utama:</strong> Menjelaskan layanan kunci secara singkat dan intuitif.
+    </div>
+    <div id="ann-cta" class="annotation">
+      <strong>Call to Action:</strong> Memotivasi pengguna untuk segera menggunakan layanan.
+    </div>
+    <div id="ann-footer" class="annotation">
+      <strong>Footer:</strong> Memuat informasi kontak dan hak cipta untuk kepercayaan pengguna.
+    </div>
+  </div>
+</body>
+</html>
+```
+
+---
